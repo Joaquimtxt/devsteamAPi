@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using devsteamAPi.Data;
 
@@ -11,9 +12,11 @@ using devsteamAPi.Data;
 namespace devsteamAPi.Migrations
 {
     [DbContext(typeof(DevSteamAPIContext))]
-    partial class DevSteamAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20250205180016_JOGOSTABLE")]
+    partial class JOGOSTABLE
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
