@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using devsteamAPi.Data;
 using devsteamAPi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace devsteamAPi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class JogosController : ControllerBase
     {
         private readonly DevSteamAPIContext _context;
@@ -22,6 +24,7 @@ namespace devsteamAPi.Controllers
         }
 
         // GET: api/Jogos
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Jogo>>> GetJogos()
         {
